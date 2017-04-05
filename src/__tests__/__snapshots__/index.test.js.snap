@@ -1,0 +1,615 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`["and",["equals","uid","1"],["regex","name",{}]] ✓ {"name":"moomoo moo!","uid":"1"} 1`] = `
+Array [
+  Array [
+    "op[>]  ",
+    "and",
+    Array [
+      Array [
+        "equals",
+        "uid",
+        "1",
+      ],
+      Array [
+        "regex",
+        "name",
+        /moo\\.\\*/,
+      ],
+    ],
+  ],
+  Array [
+    "op[.]  ",
+    true,
+    "equals",
+    Array [
+      "1",
+      "1",
+    ],
+  ],
+  Array [
+    "op[.]  ",
+    true,
+    "regex",
+    Array [
+      /moo\\.\\*/,
+      "moomoo moo!",
+    ],
+  ],
+]
+`;
+
+exports[`["and",["equals","uid","1"],["regex","name",{}]] ✕ {"name":"poop","uid":"1"} 1`] = `
+Array [
+  Array [
+    "op[>]  ",
+    "and",
+    Array [
+      Array [
+        "equals",
+        "uid",
+        "1",
+      ],
+      Array [
+        "regex",
+        "name",
+        /moo\\.\\*/,
+      ],
+    ],
+  ],
+  Array [
+    "op[.]  ",
+    true,
+    "equals",
+    Array [
+      "1",
+      "1",
+    ],
+  ],
+  Array [
+    "op[.]  ",
+    false,
+    "regex",
+    Array [
+      /moo\\.\\*/,
+      "poop",
+    ],
+  ],
+]
+`;
+
+exports[`["and",["includes","name",["a"]],["equals","browser","firefox"]] ✓ {"name":"a","browser":"firefox"} 1`] = `
+Array [
+  Array [
+    "op[>]  ",
+    "and",
+    Array [
+      Array [
+        "includes",
+        "name",
+        Array [
+          "a",
+        ],
+      ],
+      Array [
+        "equals",
+        "browser",
+        "firefox",
+      ],
+    ],
+  ],
+  Array [
+    "op[.]  ",
+    true,
+    "includes",
+    Array [
+      Array [
+        "a",
+      ],
+      "a",
+    ],
+  ],
+  Array [
+    "op[.]  ",
+    true,
+    "equals",
+    Array [
+      "firefox",
+      "firefox",
+    ],
+  ],
+]
+`;
+
+exports[`["and",["includes","name",["a"]],["equals","browser","firefox"]] ✕ {"name":"a","browser":"nope!"} 1`] = `
+Array [
+  Array [
+    "op[>]  ",
+    "and",
+    Array [
+      Array [
+        "includes",
+        "name",
+        Array [
+          "a",
+        ],
+      ],
+      Array [
+        "equals",
+        "browser",
+        "firefox",
+      ],
+    ],
+  ],
+  Array [
+    "op[.]  ",
+    true,
+    "includes",
+    Array [
+      Array [
+        "a",
+      ],
+      "a",
+    ],
+  ],
+  Array [
+    "op[.]  ",
+    false,
+    "equals",
+    Array [
+      "firefox",
+      "nope!",
+    ],
+  ],
+]
+`;
+
+exports[`["and",["includes","name",["a"]],["equals","browser","firefox"]] ✕ {"uid":"doesnt","name":"match"} 1`] = `
+Array [
+  Array [
+    "op[>]  ",
+    "and",
+    Array [
+      Array [
+        "includes",
+        "name",
+        Array [
+          "a",
+        ],
+      ],
+      Array [
+        "equals",
+        "browser",
+        "firefox",
+      ],
+    ],
+  ],
+  Array [
+    "op[.]  ",
+    false,
+    "includes",
+    Array [
+      Array [
+        "a",
+      ],
+      "match",
+    ],
+  ],
+]
+`;
+
+exports[`["equals","name","foobar"] ✓ {"name":"foobar"} 1`] = `
+Array [
+  Array [
+    "op[.]  ",
+    true,
+    "equals",
+    Array [
+      "foobar",
+      "foobar",
+    ],
+  ],
+]
+`;
+
+exports[`["equals","name","foobar"] ✕ {"name":"foo"} 1`] = `
+Array [
+  Array [
+    "op[.]  ",
+    false,
+    "equals",
+    Array [
+      "foobar",
+      "foo",
+    ],
+  ],
+]
+`;
+
+exports[`["exists","age"] ✓ {"age":23} 1`] = `
+Array [
+  Array [
+    "op[.]  ",
+    true,
+    "exists",
+    Array [
+      23,
+    ],
+  ],
+]
+`;
+
+exports[`["exists","age"] ✕ {"foobar":23} 1`] = `Array []`;
+
+exports[`["includes","name",["m1","m2"]] ✓ {"name":"m2"} 1`] = `
+Array [
+  Array [
+    "op[.]  ",
+    true,
+    "includes",
+    Array [
+      Array [
+        "m1",
+        "m2",
+      ],
+      "m2",
+    ],
+  ],
+]
+`;
+
+exports[`["includes","name",["m1","m2"]] ✕ {"name":"m3"} 1`] = `
+Array [
+  Array [
+    "op[.]  ",
+    false,
+    "includes",
+    Array [
+      Array [
+        "m1",
+        "m2",
+      ],
+      "m3",
+    ],
+  ],
+]
+`;
+
+exports[`["not",["equals","browser","firefox"]] ✓ {"browser":"android"} 1`] = `
+Array [
+  Array [
+    "op[1]  ",
+    "not",
+    Array [
+      Array [
+        "equals",
+        "browser",
+        "firefox",
+      ],
+    ],
+  ],
+  Array [
+    "op[.]  ",
+    false,
+    "equals",
+    Array [
+      "firefox",
+      "android",
+    ],
+  ],
+]
+`;
+
+exports[`["not",["equals","browser","firefox"]] ✕ {"browser":"firefox"} 1`] = `
+Array [
+  Array [
+    "op[1]  ",
+    "not",
+    Array [
+      Array [
+        "equals",
+        "browser",
+        "firefox",
+      ],
+    ],
+  ],
+  Array [
+    "op[.]  ",
+    true,
+    "equals",
+    Array [
+      "firefox",
+      "firefox",
+    ],
+  ],
+]
+`;
+
+exports[`["or",["or",["includes","name",["a"]],["equals","browser","firefox"]],["includes","uid",["user1"]]] ✓ {"uid":"user1","name":"b","browser":"android"} 1`] = `
+Array [
+  Array [
+    "op[>]  ",
+    "or",
+    Array [
+      Array [
+        "or",
+        Array [
+          "includes",
+          "name",
+          Array [
+            "a",
+          ],
+        ],
+        Array [
+          "equals",
+          "browser",
+          "firefox",
+        ],
+      ],
+      Array [
+        "includes",
+        "uid",
+        Array [
+          "user1",
+        ],
+      ],
+    ],
+  ],
+  Array [
+    "op[>]  ",
+    "or",
+    Array [
+      Array [
+        "includes",
+        "name",
+        Array [
+          "a",
+        ],
+      ],
+      Array [
+        "equals",
+        "browser",
+        "firefox",
+      ],
+    ],
+  ],
+  Array [
+    "op[.]  ",
+    false,
+    "includes",
+    Array [
+      Array [
+        "a",
+      ],
+      "b",
+    ],
+  ],
+  Array [
+    "op[.]  ",
+    false,
+    "equals",
+    Array [
+      "firefox",
+      "android",
+    ],
+  ],
+  Array [
+    "op[.]  ",
+    true,
+    "includes",
+    Array [
+      Array [
+        "user1",
+      ],
+      "user1",
+    ],
+  ],
+]
+`;
+
+exports[`["or",["or",["includes","name",["a"]],["equals","browser","firefox"]],["includes","uid",["user1"]]] ✕ {"name":"bad","browser":"foobar","uid":"poop"} 1`] = `
+Array [
+  Array [
+    "op[>]  ",
+    "or",
+    Array [
+      Array [
+        "or",
+        Array [
+          "includes",
+          "name",
+          Array [
+            "a",
+          ],
+        ],
+        Array [
+          "equals",
+          "browser",
+          "firefox",
+        ],
+      ],
+      Array [
+        "includes",
+        "uid",
+        Array [
+          "user1",
+        ],
+      ],
+    ],
+  ],
+  Array [
+    "op[>]  ",
+    "or",
+    Array [
+      Array [
+        "includes",
+        "name",
+        Array [
+          "a",
+        ],
+      ],
+      Array [
+        "equals",
+        "browser",
+        "firefox",
+      ],
+    ],
+  ],
+  Array [
+    "op[.]  ",
+    false,
+    "includes",
+    Array [
+      Array [
+        "a",
+      ],
+      "bad",
+    ],
+  ],
+  Array [
+    "op[.]  ",
+    false,
+    "equals",
+    Array [
+      "firefox",
+      "foobar",
+    ],
+  ],
+  Array [
+    "op[.]  ",
+    false,
+    "includes",
+    Array [
+      Array [
+        "user1",
+      ],
+      "poop",
+    ],
+  ],
+]
+`;
+
+exports[`["range","age",[18,40]] ✓ {"age":23} 1`] = `
+Array [
+  Array [
+    "op[.]  ",
+    true,
+    "range",
+    Array [
+      Array [
+        18,
+        40,
+      ],
+      23,
+    ],
+  ],
+]
+`;
+
+exports[`["range","age",[18,40]] ✕ {"age":66} 1`] = `
+Array [
+  Array [
+    "op[.]  ",
+    false,
+    "range",
+    Array [
+      Array [
+        18,
+        40,
+      ],
+      66,
+    ],
+  ],
+]
+`;
+
+exports[`["regex","name","moo.*"] ✓ {"name":"moomoo moo!","uid":"1"} 1`] = `
+Array [
+  Array [
+    "op[.]  ",
+    true,
+    "regex",
+    Array [
+      "moo.*",
+      "moomoo moo!",
+    ],
+  ],
+]
+`;
+
+exports[`["subset","orderIds",["O-1","O-2","O-3","O-4"]] ✓ {"orderIds":["O-1","O-2","O-3"]} 1`] = `
+Array [
+  Array [
+    "op[.]  ",
+    true,
+    "subset",
+    Array [
+      Array [
+        "O-1",
+        "O-2",
+        "O-3",
+        "O-4",
+      ],
+      Array [
+        "O-1",
+        "O-2",
+        "O-3",
+      ],
+    ],
+  ],
+]
+`;
+
+exports[`["subset","orderIds",["O-1","O-2","O-3"]] ✓ {"orderIds":[]} 1`] = `
+Array [
+  Array [
+    "op[.]  ",
+    true,
+    "subset",
+    Array [
+      Array [
+        "O-1",
+        "O-2",
+        "O-3",
+      ],
+      Array [],
+    ],
+  ],
+]
+`;
+
+exports[`["subset","orderIds",["O-1","O-2","O-3"]] ✕ {"orderIds":["O-2","O-3","O-4"]} 1`] = `
+Array [
+  Array [
+    "op[.]  ",
+    false,
+    "subset",
+    Array [
+      Array [
+        "O-1",
+        "O-2",
+        "O-3",
+      ],
+      Array [
+        "O-2",
+        "O-3",
+        "O-4",
+      ],
+    ],
+  ],
+]
+`;
+
+exports[`["subset","orderIds",[]] ✓ {"orderIds":[]} 1`] = `
+Array [
+  Array [
+    "op[.]  ",
+    true,
+    "subset",
+    Array [
+      Array [],
+      Array [],
+    ],
+  ],
+]
+`;

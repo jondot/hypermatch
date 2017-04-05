@@ -1,0 +1,23 @@
+{
+  "name": "hypermatch",
+  "version": "1.0.0",
+  "description": "A fast, sandboxed matching engine with serializable rules",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watch",
+    "bench": "node src/__tests__/index.bench.js"
+  },
+  "jest":{
+    "testMatch": ["**/?(*.)(spec|test).js?(x)"]
+  },
+  "author": "Dotan Nahum <jondotan@gmail.com> (http://paracode.com)",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "benchmark": "^2.1.4",
+    "jest": "^19.0.2"
+  }
+}

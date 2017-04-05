@@ -1,5 +1,7 @@
 # Hypermatch
 
+<img src="https://travis-ci.org/jondot/hypermatch.svg?branch=master">
+
 A fast, sandboxed matching engine with serializable rules.
 
 

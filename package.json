@@ -1,6 +1,6 @@
 {
   "name": "hypermatch",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A fast, sandboxed matching engine with serializable rules",
   "main": "src/index.js",
   "scripts": {

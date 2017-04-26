@@ -30,6 +30,10 @@ const prelude = {
 }
 
 const run = (tree, props, opts = {trace: false, log: console.log}) => {
+  if (tree == null || tree.length == 0){
+    return true
+  }
+
   const h = head(tree)
   const t = tail(tree)
   const op = prelude[h]

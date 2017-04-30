@@ -1,4 +1,12 @@
-const {map, reduce, find, head, tail, includes, isEqual, intersection, inRange} = require('lodash')
+const map = require('lodash/map')
+const reduce = require('lodash/reduce')
+const find = require('lodash/find')
+const head = require('lodash/head')
+const tail = require('lodash/tail')
+const includes = require('lodash/includes')
+const isEqual = require('lodash/isEqual')
+const intersection = require('lodash/intersection')
+const inRange = require('lodash/inRange')
 
 const and = elems => reduce(elems, (a, e) => a && e, true)
 const or = elems => !!find(elems, _ => !!_)

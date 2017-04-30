@@ -1,4 +1,7 @@
-const { filter, find, tail, initial } = require('lodash')
+const filter = require('lodash/filter')
+const find = require('lodash/find')
+const tail = require('lodash/tail')
+const initial = require('lodash/initial')
 const run = require('./index')
 
 const trap = (rule, func) => ({rule, func})

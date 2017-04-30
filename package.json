@@ -1,15 +1,19 @@
 {
   "name": "hypermatch",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A fast, sandboxed matching engine with serializable rules",
-  "main": "src/index.js",
+  "main": "dist/hypermatch.js",
   "scripts": {
     "test": "jest",
     "watch": "jest --watch",
-    "bench": "node src/__tests__/index.bench.js"
+    "bench": "node src/__tests__/index.bench.js",
+    "dist": "webpack",
+    "prepublish":"yarn run dist"
   },
-  "jest":{
-    "testMatch": ["**/?(*.)(spec|test).js?(x)"]
+  "jest": {
+    "testMatch": [
+      "**/?(*.)(spec|test).js?(x)"
+    ]
   },
   "author": "Dotan Nahum <jondotan@gmail.com> (http://paracode.com)",
   "license": "MIT",
@@ -17,7 +21,14 @@
     "lodash": "^4.17.4"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
     "benchmark": "^2.1.4",
-    "jest": "^19.0.2"
+    "jest": "^19.0.2",
+    "webpack": "^2.4.1"
   }
 }

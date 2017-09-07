@@ -106,6 +106,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var range = function range(left, right) {
 	  return inRange.apply(undefined, [right].concat((0, _toConsumableArray3.default)(left)));
 	};
+	// lodash.flip takes a lot of bytes. do it manually:
 	var lt = function lt(left, right) {
 	  return lto(right, left);
 	};

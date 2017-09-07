@@ -9,7 +9,6 @@ const intersection = require('lodash/intersection')
 const inRange = require('lodash/inRange')
 const lto = require('lodash/lt')
 const gto = require('lodash/gt')
-const flip = require('lodash/flip')
 
 const and = elems => reduce(elems, (a, e) => a && e, true)
 const or = elems => !!find(elems, _ => !!_)
@@ -20,8 +19,9 @@ const exists = e => !!e
 const subset = (left, right) =>
   intersection(right, left).length === right.length
 const range = (left, right) => inRange(right, ...left)
-const lt = flip(lto)
-const gt = flip(gto)
+// lodash.flip takes a lot of bytes. do it manually:
+const lt = (left, right) => lto(right, left)
+const gt = (left, right) => gto(right, left)
 
 // to avoid incurring costs from compiling the same regex each time,
 // when loading the AST, we need to encode/decode regexes

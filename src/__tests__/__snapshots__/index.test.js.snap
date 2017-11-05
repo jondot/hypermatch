@@ -303,6 +303,66 @@ Array [
 ]
 `;
 
+exports[`["intersects","professions",["baker","barista"]] ✕ {"professions":["waiter"]} 1`] = `
+Array [
+  Array [
+    "op[.]  ",
+    false,
+    "intersects",
+    Array [
+      Array [
+        "baker",
+        "barista",
+      ],
+      Array [
+        "waiter",
+      ],
+    ],
+  ],
+]
+`;
+
+exports[`["intersects","professions",["barista","baker","bartender","waiter"]] ✓ {"professions":["chef","baker","bartender"]} 1`] = `
+Array [
+  Array [
+    "op[.]  ",
+    true,
+    "intersects",
+    Array [
+      Array [
+        "barista",
+        "baker",
+        "bartender",
+        "waiter",
+      ],
+      Array [
+        "chef",
+        "baker",
+        "bartender",
+      ],
+    ],
+  ],
+]
+`;
+
+exports[`["intersects","professions",["barista"]] ✓ {"professions":["barista"]} 1`] = `
+Array [
+  Array [
+    "op[.]  ",
+    true,
+    "intersects",
+    Array [
+      Array [
+        "barista",
+      ],
+      Array [
+        "barista",
+      ],
+    ],
+  ],
+]
+`;
+
 exports[`["lt","age",12] ✕ {"age":23} 1`] = `
 Array [
   Array [

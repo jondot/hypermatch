@@ -18,6 +18,7 @@ const not = e => !e
 const exists = e => !!e
 const subset = (left, right) =>
   intersection(right, left).length === right.length
+const intersects = (left, right) => intersection(left, right).length !== 0
 const range = (left, right) => inRange(right, ...left)
 // lodash.flip takes a lot of bytes. do it manually:
 const lt = (left, right) => lto(right, left)
@@ -39,6 +40,7 @@ const prelude = {
   includes,
   regex,
   subset,
+  intersects,
   range,
   exists,
   gt,

@@ -103,6 +103,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	var subset = function subset(left, right) {
 	  return intersection(right, left).length === right.length;
 	};
+	var intersects = function intersects(left, right) {
+	  return intersection(left, right).length !== 0;
+	};
 	var range = function range(left, right) {
 	  return inRange.apply(undefined, [right].concat((0, _toConsumableArray3.default)(left)));
 	};
@@ -132,6 +135,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  includes: includes,
 	  regex: regex,
 	  subset: subset,
+	  intersects: intersects,
 	  range: range,
 	  exists: exists,
 	  gt: gt,

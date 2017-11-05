@@ -79,6 +79,13 @@ testRun(false, ['subset', 'orderIds', ['O-1', 'O-2', 'O-3']], {
 testRun(true, ['subset', 'orderIds', ['O-1', 'O-2', 'O-3']], { orderIds: [] })
 testRun(true, ['subset', 'orderIds', []], { orderIds: [] })
 
+// intersects
+testRun(true, ['intersects', 'professions', ['barista', 'baker', 'bartender', 'waiter']], {
+  professions: ['chef', 'baker', 'bartender']
+})
+testRun(false, ['intersects', 'professions', ['baker', 'barista']], { 'professions': ['waiter'] })
+testRun(true, ['intersects', 'professions', ['barista']], { professions: ['barista'] })
+
 // range
 testRun(true, ['range', 'age', [18, 40]], { age: 23 })
 testRun(false, ['range', 'age', [18, 40]], { age: 66 })

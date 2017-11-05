@@ -50,6 +50,7 @@ Terminals, dealing with collections.
 * `[ excludes, key, ary ]`
 * `[ includes, key, ary ]`
 * `[ subset, key, ary ]` - verify that the collection behind `key` is a subset of `ary` defined in the rules.
+* `[ intersects, key, ary]` - verify that the collection behind `key` intersects with `ary`
 * `[ range, key, [start, end] ]` - verify that the value behind `key` is between `start` and `end`.
 
 Examples:

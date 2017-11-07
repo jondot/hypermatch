@@ -1,7 +1,5 @@
 const filter = require('lodash/filter')
 const find = require('lodash/find')
-const tail = require('lodash/tail')
-const initial = require('lodash/initial')
 const run = require('./index')
 
 const trap = (rule, func) => ({rule, func})
@@ -13,7 +11,7 @@ const cond = (...args) => {
 
   return obj => {
     const found = find(conds, ({rule}) => run(rule, obj)) || fallback
-    if (found){
+    if (found) {
       return found.func(obj)
     }
   }

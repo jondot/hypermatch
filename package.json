@@ -10,13 +10,11 @@
     "build": "yarn build:lib && yarn build:dist",
     "watch": "jest --watch",
     "bench": "node src/__tests__/index.bench.js",
-    "prepublishOnly": "yarn build",
+    "prepublishOnly": "yarn install && yarn build",
     "release": "yarn version && git push --tags"
   },
   "jest": {
-    "testMatch": [
-      "**/?(*.)(spec|test).js?(x)"
-    ]
+    "testMatch": ["**/?(*.)(spec|test).js?(x)"]
   },
   "author": "Dotan Nahum <jondotan@gmail.com> (http://paracode.com)",
   "license": "MIT",

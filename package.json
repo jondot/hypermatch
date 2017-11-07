@@ -10,13 +10,11 @@
     "build": "yarn build:lib && yarn build:dist",
     "watch": "jest --watch",
     "bench": "node src/__tests__/index.bench.js",
-    "prepublish": "yarn build",
+    "prepublishOnly": "yarn build",
     "release": "yarn version && git push --tags"
   },
   "jest": {
-    "testMatch": [
-      "**/?(*.)(spec|test).js?(x)"
-    ]
+    "testMatch": ["**/?(*.)(spec|test).js?(x)"]
   },
   "author": "Dotan Nahum <jondotan@gmail.com> (http://paracode.com)",
   "license": "MIT",
@@ -24,7 +22,7 @@
     "lodash": "^4.17.4"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.1",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.24.1",
     "babel-loader": "6.2.7",
     "babel-plugin-transform-runtime": "^6.23.0",

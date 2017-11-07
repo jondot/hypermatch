@@ -1,6 +1,6 @@
 {
   "name": "hypermatch",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "A fast, sandboxed matching engine with serializable rules",
   "main": "lib/index.js",
   "scripts": {
@@ -14,7 +14,9 @@
     "release": "yarn version && git push --tags"
   },
   "jest": {
-    "testMatch": ["**/?(*.)(spec|test).js?(x)"]
+    "testMatch": [
+      "**/?(*.)(spec|test).js?(x)"
+    ]
   },
   "author": "Dotan Nahum <jondotan@gmail.com> (http://paracode.com)",
   "license": "MIT",

@@ -1,6 +1,6 @@
 {
   "name": "hypermatch",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "A fast, sandboxed matching engine with serializable rules",
   "main": "lib/index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "watch": "jest --watch",
     "bench": "node src/__tests__/index.bench.js",
     "prepublishOnly": "yarn install && yarn build",
-    "release": "yarn build && yarn version && git push --tags"
+    "release": "yarn build && git add lib/* ; git commit -m 'build' ; yarn version && git push --tags"
   },
   "jest": {
     "testMatch": [

@@ -30,6 +30,7 @@ const gt = (left, right) => gto(right, left)
 const regex = (left, right) => !!right.match(left)
 
 const all = (tree, collection) => collection.reduce((result, item) => result && run(tree, item), true)
+const any = (tree, collection) => collection.reduce((result, item) => result || run(tree, item), false)
 const mapops = ['and', 'or']
 const unaryops = ['not']
 const prelude = {
@@ -46,7 +47,8 @@ const prelude = {
   exists,
   gt,
   lt,
-  all
+  all,
+  any
 }
 
 const run = (tree, props, opts = { trace: false, log: console.log }) => {

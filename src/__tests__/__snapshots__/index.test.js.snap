@@ -280,6 +280,88 @@ Array [
 ]
 `;
 
+exports[`["any","users",["and",["regex","user","^john"],["exists","active"]]] ✓ {"users":[{"user":"john","age":36,"active":false},{"user":"johnathan","age":40,"active":false},{"user":"johny","age":21,"active":true}]} 1`] = `
+Array [
+  Array [
+    "op[.]  ",
+    true,
+    "any",
+    Array [
+      Array [
+        "and",
+        Array [
+          "regex",
+          "user",
+          "^john",
+        ],
+        Array [
+          "exists",
+          "active",
+        ],
+      ],
+      Array [
+        Object {
+          "active": false,
+          "age": 36,
+          "user": "john",
+        },
+        Object {
+          "active": false,
+          "age": 40,
+          "user": "johnathan",
+        },
+        Object {
+          "active": true,
+          "age": 21,
+          "user": "johny",
+        },
+      ],
+    ],
+  ],
+]
+`;
+
+exports[`["any","users",["and",["regex","user","^john"],["exists","active"]]] ✕ {"users":[{"user":"john","age":36,"active":false},{"user":"johnathan","age":40,"active":false},{"user":"johny","age":21,"active":false}]} 1`] = `
+Array [
+  Array [
+    "op[.]  ",
+    false,
+    "any",
+    Array [
+      Array [
+        "and",
+        Array [
+          "regex",
+          "user",
+          "^john",
+        ],
+        Array [
+          "exists",
+          "active",
+        ],
+      ],
+      Array [
+        Object {
+          "active": false,
+          "age": 36,
+          "user": "john",
+        },
+        Object {
+          "active": false,
+          "age": 40,
+          "user": "johnathan",
+        },
+        Object {
+          "active": false,
+          "age": 21,
+          "user": "johny",
+        },
+      ],
+    ],
+  ],
+]
+`;
+
 exports[`["equals","name","foobar"] ✓ {"name":"foobar"} 1`] = `
 Array [
   Array [

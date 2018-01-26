@@ -1,5 +1,87 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`["all","users",["and",["regex","user","^john"],["exists","active"]]] ✓ {"users":[{"user":"john","age":36,"active":true},{"user":"johnathan","age":40,"active":true},{"user":"johny","age":21,"active":true}]} 1`] = `
+Array [
+  Array [
+    "op[.]  ",
+    true,
+    "all",
+    Array [
+      Array [
+        "and",
+        Array [
+          "regex",
+          "user",
+          "^john",
+        ],
+        Array [
+          "exists",
+          "active",
+        ],
+      ],
+      Array [
+        Object {
+          "active": true,
+          "age": 36,
+          "user": "john",
+        },
+        Object {
+          "active": true,
+          "age": 40,
+          "user": "johnathan",
+        },
+        Object {
+          "active": true,
+          "age": 21,
+          "user": "johny",
+        },
+      ],
+    ],
+  ],
+]
+`;
+
+exports[`["all","users",["and",["regex","user","^john"],["exists","active"]]] ✕ {"users":[{"user":"john","age":36,"active":true},{"user":"johnathan","age":40,"active":false},{"user":"johny","age":21,"active":true}]} 1`] = `
+Array [
+  Array [
+    "op[.]  ",
+    false,
+    "all",
+    Array [
+      Array [
+        "and",
+        Array [
+          "regex",
+          "user",
+          "^john",
+        ],
+        Array [
+          "exists",
+          "active",
+        ],
+      ],
+      Array [
+        Object {
+          "active": true,
+          "age": 36,
+          "user": "john",
+        },
+        Object {
+          "active": false,
+          "age": 40,
+          "user": "johnathan",
+        },
+        Object {
+          "active": true,
+          "age": 21,
+          "user": "johny",
+        },
+      ],
+    ],
+  ],
+]
+`;
+
 exports[`["and",["equals","uid","1"],["regex","name",{}]] ✓ {"name":"moomoo moo!","uid":"1"} 1`] = `
 Array [
   Array [

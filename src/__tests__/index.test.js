@@ -99,3 +99,41 @@ testRun(false, ['lt', 'age', 12], { age: 23 })
 testRun(true, ['gt', 'age', 12], { age: 23 })
 testRun(true, ['lt', 'age', 40], { age: 23 })
 testRun(false, ['gt', 'age', 40], { age: 23 })
+
+// all
+testRun(
+  true,
+  [
+    'all',
+    'users',
+    ['and',
+      ['regex', 'user', '^john'],
+      ['exists', 'active']
+    ]
+  ],
+  {
+    users: [
+      { 'user': 'john', 'age': 36, 'active': true },
+      { 'user': 'johnathan', 'age': 40, 'active': true },
+      { 'user': 'johny', 'age': 21, 'active': true }
+    ]
+  }
+)
+testRun(
+  false,
+  [
+    'all',
+    'users',
+    ['and',
+      ['regex', 'user', '^john'],
+      ['exists', 'active']
+    ]
+  ],
+  {
+    users: [
+      { 'user': 'john', 'age': 36, 'active': true },
+      { 'user': 'johnathan', 'age': 40, 'active': false },
+      { 'user': 'johny', 'age': 21, 'active': true }
+    ]
+  }
+)

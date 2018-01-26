@@ -29,6 +29,7 @@ const gt = (left, right) => gto(right, left)
 // http://stackoverflow.com/questions/12075927/serialization-of-regexp
 const regex = (left, right) => !!right.match(left)
 
+const all = (tree, collection) => collection.reduce((result, item) => result && run(tree, item), true)
 const mapops = ['and', 'or']
 const unaryops = ['not']
 const prelude = {
@@ -44,7 +45,8 @@ const prelude = {
   range,
   exists,
   gt,
-  lt
+  lt,
+  all
 }
 
 const run = (tree, props, opts = { trace: false, log: console.log }) => {

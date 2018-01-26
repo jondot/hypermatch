@@ -213,3 +213,41 @@ testRun(
     ]
   }
 )
+
+// none
+testRun(
+  true,
+  [
+    'none',
+    'users',
+    ['and',
+      ['regex', 'user', '^john'],
+      ['exists', 'active']
+    ]
+  ],
+  {
+    users: [
+      { 'user': 'bob', 'age': 36, 'active': false },
+      { 'user': 'bill', 'age': 40, 'active': false },
+      { 'user': 'max', 'age': 21, 'active': true }
+    ]
+  }
+)
+testRun(
+  false,
+  [
+    'none',
+    'users',
+    ['and',
+      ['regex', 'user', '^john'],
+      ['exists', 'active']
+    ]
+  ],
+  {
+    users: [
+      { 'user': 'bob', 'age': 36, 'active': false },
+      { 'user': 'johnathan', 'age': 40, 'active': true },
+      { 'user': 'max', 'age': 21, 'active': true }
+    ]
+  }
+)

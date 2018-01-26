@@ -555,6 +555,88 @@ Array [
 ]
 `;
 
+exports[`["none","users",["and",["regex","user","^john"],["exists","active"]]] ✓ {"users":[{"user":"bob","age":36,"active":false},{"user":"bill","age":40,"active":false},{"user":"max","age":21,"active":true}]} 1`] = `
+Array [
+  Array [
+    "op[.]  ",
+    true,
+    "none",
+    Array [
+      Array [
+        "and",
+        Array [
+          "regex",
+          "user",
+          "^john",
+        ],
+        Array [
+          "exists",
+          "active",
+        ],
+      ],
+      Array [
+        Object {
+          "active": false,
+          "age": 36,
+          "user": "bob",
+        },
+        Object {
+          "active": false,
+          "age": 40,
+          "user": "bill",
+        },
+        Object {
+          "active": true,
+          "age": 21,
+          "user": "max",
+        },
+      ],
+    ],
+  ],
+]
+`;
+
+exports[`["none","users",["and",["regex","user","^john"],["exists","active"]]] ✕ {"users":[{"user":"bob","age":36,"active":false},{"user":"johnathan","age":40,"active":true},{"user":"max","age":21,"active":true}]} 1`] = `
+Array [
+  Array [
+    "op[.]  ",
+    false,
+    "none",
+    Array [
+      Array [
+        "and",
+        Array [
+          "regex",
+          "user",
+          "^john",
+        ],
+        Array [
+          "exists",
+          "active",
+        ],
+      ],
+      Array [
+        Object {
+          "active": false,
+          "age": 36,
+          "user": "bob",
+        },
+        Object {
+          "active": true,
+          "age": 40,
+          "user": "johnathan",
+        },
+        Object {
+          "active": true,
+          "age": 21,
+          "user": "max",
+        },
+      ],
+    ],
+  ],
+]
+`;
+
 exports[`["not",["equals","browser","firefox"]] ✓ {"browser":"android"} 1`] = `
 Array [
   Array [

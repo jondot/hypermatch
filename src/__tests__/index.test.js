@@ -175,3 +175,41 @@ testRun(
     ]
   }
 )
+
+// one
+testRun(
+  true,
+  [
+    'one',
+    'users',
+    ['and',
+      ['regex', 'user', '^john'],
+      ['exists', 'active']
+    ]
+  ],
+  {
+    users: [
+      { 'user': 'john', 'age': 36, 'active': false },
+      { 'user': 'johnathan', 'age': 40, 'active': false },
+      { 'user': 'johny', 'age': 21, 'active': true }
+    ]
+  }
+)
+testRun(
+  false,
+  [
+    'one',
+    'users',
+    ['and',
+      ['regex', 'user', '^john'],
+      ['exists', 'active']
+    ]
+  ],
+  {
+    users: [
+      { 'user': 'john', 'age': 36, 'active': true },
+      { 'user': 'johnathan', 'age': 40, 'active': false },
+      { 'user': 'johny', 'age': 21, 'active': true }
+    ]
+  }
+)

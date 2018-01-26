@@ -31,6 +31,7 @@ const regex = (left, right) => !!right.match(left)
 
 const all = (tree, collection) => collection.reduce((result, item) => result && run(tree, item), true)
 const any = (tree, collection) => collection.reduce((result, item) => result || run(tree, item), false)
+const one = (tree, collection) => collection.filter(item => run(tree, item)).length === 1
 const mapops = ['and', 'or']
 const unaryops = ['not']
 const prelude = {
@@ -48,7 +49,8 @@ const prelude = {
   gt,
   lt,
   all,
-  any
+  any,
+  one
 }
 
 const run = (tree, props, opts = { trace: false, log: console.log }) => {

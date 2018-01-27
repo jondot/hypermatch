@@ -52,6 +52,10 @@ Terminals, dealing with collections.
 * `[ subset, key, ary ]` - verify that the collection behind `key` is a subset of `ary` defined in the rules.
 * `[ intersects, key, ary]` - verify that the collection behind `key` intersects with `ary`
 * `[ range, key, [start, end] ]` - verify that the value behind `key` is between `start` and `end`.
+* `[ all, key, [expr] ]` - verify that all values conform to the expression.
+* `[ any, key, [expr] ]` - verify that at least one value conform to the expression.
+* `[ one, key, [expr] ]` - verify that exactly one value conform to the expression.
+* `[ none, key, [expr] ]` - verify that no values conform to the expression.
 
 Examples:
 
@@ -65,6 +69,26 @@ Verify that the whitelist `['a']` contains the value under `name`.
 
 For this rule `{ name: 'a' }` validates while `{ name: 'foo' }` doesn't.
 
+Verify that all users in the collection have age in the correct range and are active.
+
+```javascript
+['all', 'users',
+  ['and',
+    ['range',
+      'age',
+      [18, 25]],
+    ['exists',
+      'active']]
+```
+
+```
+{
+  users: [
+    { name: 'bob', age: 19, active: true },
+    { name: 'bill', age: 24, active: true }
+  ]
+}
+```
 
 ## Matchers
 

@@ -33,7 +33,7 @@ const regex = (left, right) => !!right.match(left)
 const all = (tree, collection) => reduce(collection, (result, item) => result && run(tree, item), true)
 const any = (tree, collection) => reduce(collection, (result, item) => result || run(tree, item), false)
 const one = (tree, collection) => filter(collection, item => run(tree, item)).length === 1
-const none = (tree, collection) => filter(collection, item => run(tree, item)).length === 0
+const none = (tree, collection) => not(any(tree, collection))
 
 const mapops = ['and', 'or']
 const unaryops = ['not']

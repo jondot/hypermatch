@@ -9,6 +9,7 @@ const intersection = require('lodash/intersection')
 const inRange = require('lodash/inRange')
 const lto = require('lodash/lt')
 const gto = require('lodash/gt')
+const filter = require('lodash/filter')
 
 const and = elems => reduce(elems, (a, e) => a && e, true)
 const or = elems => !!find(elems, _ => !!_)
@@ -29,10 +30,10 @@ const gt = (left, right) => gto(right, left)
 // http://stackoverflow.com/questions/12075927/serialization-of-regexp
 const regex = (left, right) => !!right.match(left)
 
-const all = (tree, collection) => collection.reduce((result, item) => result && run(tree, item), true)
-const any = (tree, collection) => collection.reduce((result, item) => result || run(tree, item), false)
-const one = (tree, collection) => collection.filter(item => run(tree, item)).length === 1
-const none = (tree, collection) => collection.filter(item => run(tree, item)).length === 0
+const all = (tree, collection) => reduce(collection, (result, item) => result && run(tree, item), true)
+const any = (tree, collection) => reduce(collection, (result, item) => result || run(tree, item), false)
+const one = (tree, collection) => filter(collection, item => run(tree, item)).length === 1
+const none = (tree, collection) => filter(collection, item => run(tree, item)).length === 0
 
 const mapops = ['and', 'or']
 const unaryops = ['not']
